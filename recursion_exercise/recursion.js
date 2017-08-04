@@ -5,7 +5,7 @@ function productOfArray(array) {
 }
 
 function collectStrings(obj, stringArray = []) {
-  for (let value in obj) {
+  for(let value in obj) {
     if(typeof obj[value] === "string") {
       stringArray.push(obj[value])
     } else {
@@ -13,4 +13,18 @@ function collectStrings(obj, stringArray = []) {
     }
   }
   return stringArray
+}
+
+function contains(nestedObject, value) {
+  for(let key in nestedObject) {
+    if(nestedObject[key] === value) {
+      return true
+    } else {
+      if(typeof nestedObject[key] === "object") {
+        return contains(nestedObject[key], value)
+      } else {
+        return false
+      }
+    }
+  }
 }
