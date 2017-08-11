@@ -28,3 +28,16 @@ function contains(nestedObject, value) {
     }
   }
 }
+
+function search(arr, value, index = 0) {
+
+  if(arr.length === index) {
+    return -1
+  }
+
+  return (
+    arr[index] === value
+      ? index
+      : search(arr, value, index + 1)
+  )
+}
