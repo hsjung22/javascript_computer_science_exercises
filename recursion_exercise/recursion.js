@@ -41,3 +41,29 @@ function search(arr, value, index = 0) {
       : search(arr, value, index + 1)
   )
 }
+
+
+function binarySearch(arr, value, index = Math.floor((arr.length - 1)/2)) {
+
+  if (arr[index] === value) {
+    return index
+  }
+
+  if (index === 0 || index === arr.length - 1) {
+    return -1
+  }
+
+  if (arr[index] > value) {
+    const newIndex = Math.floor(index/2)
+    console.log('index', index)
+    console.log('newIndex', newIndex)
+    return binarySearch(arr, value, newIndex)
+  }
+
+  if (arr[index] < value) {
+    const newIndex = index + Math.floor((arr.length - index)/2)
+    return binarySearch(arr, value, newIndex)
+  }
+}
+
+
