@@ -55,8 +55,6 @@ function binarySearch(arr, value, index = Math.floor((arr.length - 1)/2)) {
 
   if (arr[index] > value) {
     const newIndex = Math.floor(index/2)
-    console.log('index', index)
-    console.log('newIndex', newIndex)
     return binarySearch(arr, value, newIndex)
   }
 
@@ -65,5 +63,3 @@ function binarySearch(arr, value, index = Math.floor((arr.length - 1)/2)) {
     return binarySearch(arr, value, newIndex)
   }
 }
-
-
