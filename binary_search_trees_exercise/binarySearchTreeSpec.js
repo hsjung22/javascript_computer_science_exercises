@@ -191,4 +191,16 @@ describe("#remove", function(){
     expect(binarySearchTree.root.right.right.value).to.equal(60)
     expect(binarySearchTree.root.right.right.left.value).to.equal(30)
   });
+
+  it("should correctly remove a node with two children", function(){
+
+    binarySearchTree.insertIteratively(8).insertIteratively(3).insertIteratively(10).insertIteratively(14).insertIteratively(13).insertIteratively(1).insertIteratively(6).insertIteratively(4).insertIteratively(7)
+
+    binarySearchTree.remove(3)
+    expect(binarySearchTree.root.left.value).to.equal(4)
+    expect(binarySearchTree.root.left.left.value).to.equal(1)
+    expect(binarySearchTree.root.left.right.value).to.equal(6)
+    expect(binarySearchTree.root.left.right.right.value).to.equal(7)
+    expect(binarySearchTree.root.left.right.left).to.equal(null)
+  });
 });
