@@ -118,7 +118,7 @@ describe("#depthFirstSearch", function(){
     graph.addEdge('R','T')
     graph.addEdge('W','T')
 
-    expect(graph.depthFirstSearch('S')).to.deep.equal(["S", "U", "V", "W", "T", "R", "Q", "Y", "X", "P"])
+    expect(graph.depthFirstSearch('S')).to.deep.equal(["S", "P", "X", "U", "V", "W", "Y", "R", "Q", "T"])
   });
 });
 
